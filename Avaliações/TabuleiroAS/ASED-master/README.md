@@ -1,67 +1,94 @@
-# 💰 Jogo de Tabuleiro Imobiliário — Simulação em Java
 
-Este projeto é uma simulação de um jogo de tabuleiro estilo Banco Imobiliário, implementado em Java como parte de um trabalho acadêmico da disciplina de **Estruturas de Dados**.
+# 🎲 Simulador de Jogo de Tabuleiro Imobiliário — Java (Lista Circular)
+
+## 📌 Descrição Geral
+
+Este projeto consiste em um jogo de tabuleiro inspirado no **Banco Imobiliário**, desenvolvido para a disciplina de **Estruturas de Dados**. O jogador pode se movimentar pelo tabuleiro, comprar imóveis, pagar aluguéis, propor negociações e competir por patrimônio.
+
+O jogo simula uma estrutura de dados dinâmica e interativa, permitindo explorar conceitos de **listas ligadas circulares**, **coleções genéricas** e **lógica de fluxo de jogo**.
 
 ---
 
-## 📌 Objetivo do Jogo
+## 🎯 Objetivo do Projeto
 
-Cada jogador deve se movimentar pelo tabuleiro, comprar imóveis, pagar aluguéis, receber salários e tentar acumular o maior patrimônio possível até o final da partida.
+Criar um sistema em Java que simule um jogo de tabuleiro com:
+- Cadastro e gerenciamento de jogadores
+- Cadastro e negociação de imóveis
+- Movimentação de jogadores por uma estrutura de lista circular
+- Controle de turnos, rodadas e condições de fim de jogo
 
 ---
 
 ## 🧠 Estruturas de Dados Utilizadas
 
-- **Lista Ligada Circular**: Representa o tabuleiro. Cada casa aponta para a próxima, e a última casa volta para o início.
-- **ArrayList**: Utilizado para armazenar jogadores e imóveis de forma dinâmica.
-- **Orientação a Objetos**: Toda a lógica está organizada em classes específicas, facilitando a reutilização e a manutenção do código.
+### ✅ 1. Lista Ligada Circular (Classe: `Tabuleiro`)
+- **Finalidade**: Representar o tabuleiro do jogo.
+- **Justificativa**: A lista circular permite que os jogadores se movimentem continuamente pelas casas, simulando a rotação do tabuleiro.
+
+### ✅ 2. ArrayList (Classe: `Main`)
+- **Finalidade**: Armazenar dinamicamente os jogadores e imóveis cadastrados.
+- **Justificativa**: É uma estrutura simples, eficiente e ideal para controle dinâmico de dados que não precisam de ordenação complexa.
+
+### ✅ 3. Encapsulamento com Orientação a Objetos
+- Classes bem definidas (`Jogador`, `Imovel`, `Node`, `Tabuleiro`) encapsulam a lógica do sistema, facilitando a reutilização e manutenibilidade.
 
 ---
 
-## 🚀 Funcionalidades
+## ⚙️ Instruções de Compilação e Execução
 
-### 🎮 Menu Principal
+### ✅ Pré-requisitos
+- Java JDK instalado
+- Terminal ou prompt de comando
 
-- Cadastro, edição, listagem e remoção de jogadores (máx. 6)
-- Cadastro, edição, listagem e remoção de imóveis (máx. 40)
-- Configuração de:
-  - Saldo inicial dos jogadores
-  - Salário recebido ao completar uma volta
-  - Número máximo de rodadas
-- Início do jogo
+### ✅ Passo a passo
 
-### 🕹️ Durante o Jogo
+1. **Clone ou baixe o repositório**
+   - Copie todos os arquivos `.java` para uma pasta local.
 
-- Lançamento de dados (dois dados de 1 a 6)
-- Movimento pelo tabuleiro (lista circular)
-- Compra de imóveis disponíveis
-- Pagamento de aluguel ao cair em imóveis de outros jogadores
-- Recebimento de salário ao passar pela casa inicial
-- Casas especiais:
-  - 💸 **Imposto**: paga 10% do saldo
-  - 💰 **Restituição**: recebe 10% do saldo
-- Negociação de propriedades entre jogadores
-- Visualização do status completo (saldo + propriedades)
-- Ranking atualizado por patrimônio
-- Opção de desistir do jogo
+2. **Compile o projeto**
+   No terminal, navegue até a pasta e execute:
+   ```bash
+   javac Main.java
+   ```
+
+3. **Execute o jogo**
+   Após a compilação bem-sucedida:
+   ```bash
+   java Main
+   ```
 
 ---
 
-## 🧾 Regras Gerais
+## 🕹️ Funcionalidades do Jogo
 
-- O jogo exige pelo menos **2 jogadores** e **10 imóveis** para começar.
-- Cada jogador começa com um saldo inicial configurável (padrão: R$ 25.000,00).
-- O jogo termina ao atingir o número máximo de rodadas ou quando restar apenas um jogador com saldo positivo.
-- O vencedor é o jogador com o maior patrimônio (saldo + valor dos imóveis).
+- Cadastro e gerenciamento de até **6 jogadores**
+- Cadastro e gerenciamento de até **40 imóveis**
+- Configuração de saldo inicial, salário por volta e número máximo de rodadas
+- Movimento por dados (2 dados de 6 lados)
+- Casas especiais: `Imposto` (perde 10% do saldo) e `Restituição` (ganha 10%)
+- Compra, aluguel e negociação de imóveis
+- Ranking dinâmico baseado em patrimônio (saldo + imóveis)
+- Fim do jogo por número de rodadas ou quando apenas 1 jogador restar
 
 ---
 
-## 🏗️ Estrutura de Arquivos
+## 📁 Estrutura de Arquivos
 
 ```plaintext
 📁 src/
-├── Main.java            # Controla o menu e a execução do jogo
+├── Main.java            # Menu, controle do jogo e lógica principal
 ├── Jogador.java         # Classe que representa o jogador
-├── Imovel.java          # Classe que representa os imóveis
-├── Node.java            # Representa uma casa do tabuleiro (nó da lista)
-└── Tabuleiro.java       # Lista ligada circular (tabuleiro)
+├── Imovel.java          # Classe que representa um imóvel do tabuleiro
+├── Node.java            # Nó da lista circular (representa uma casa)
+└── Tabuleiro.java       # Lista ligada circular que representa o tabuleiro
+```
+
+---
+
+## 👨‍💻 Autor
+
+**Kaue Marques Magnus**  
+Curso de Análise e Desenvolvimento de Sistemas  
+ULBRA — 2025
+
+---
